@@ -33,6 +33,7 @@ export default class MarkdownPreview extends React.Component {
                             <span className="yellow"></span>
                             <span className="green"></span>
                         </div>
+                        <span>editor</span>
                         <textarea name="editor" id="editor" onChange={this.handleContent} />
                     </div>
                     <div id="preview-wrapper">
@@ -41,6 +42,7 @@ export default class MarkdownPreview extends React.Component {
                             <span className="yellow"></span>
                             <span className="green"></span>
                         </div>
+                        <span>preview</span>
                         <div id="preview">
                         </div>
                     </div>

@@ -18,10 +18,18 @@
     flex: 1;
     margin: 10px;
     height: 80vh;
+    position: relative;
 
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 10px 1px #ccc;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#editor-wrapper:hover,
+#preview-wrapper:hover {
+    box-shadow: 0 0 10px 1px #767676;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 #editor,
@@ -64,6 +72,7 @@
 span.red::before {
     background-color: #ff605c;
 }
+
 span.red:hover::before {
     background-color: #dd3834;
 }
@@ -72,6 +81,7 @@ span.yellow::before {
     background-color: #ffbd44;
     left: 6%;
 }
+
 span.yellow:hover::before {
     background-color: #eda92c;
 }
@@ -80,6 +90,22 @@ span.green::before {
     background-color: #00ca4e;
     left: 10%;
 }
+
 span.green:hover::before {
     background-color: #11a74b;
+}
+
+.editor-top span:last-child {
+    left: 50%;
+}
+
+#editor-wrapper>span,
+#preview-wrapper>span {
+    position: absolute;
+    top: 0.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #b4b4b4;
+    text-shadow: 1px 0 #bababa;
+    letter-spacing: 0.5px;
 }
