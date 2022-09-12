@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { marked } from 'marked';
 import "./MarkdownPreviewer.css";
+import PageTopbar from './PageTopbar';
 
 export default class MarkdownPreview extends React.Component {
     constructor(props) {
@@ -28,21 +29,11 @@ export default class MarkdownPreview extends React.Component {
                 <div id="wrapper">
                     <Header />
                     <div id="editor-wrapper">
-                        <div className="editor-top">
-                            <span className="red"></span>
-                            <span className="yellow"></span>
-                            <span className="green"></span>
-                        </div>
-                        <span>editor</span>
+                        <PageTopbar title={"editor"} />
                         <textarea name="editor" id="editor" onChange={this.handleContent} />
                     </div>
                     <div id="preview-wrapper">
-                        <div className="editor-top">
-                            <span className="red"></span>
-                            <span className="yellow"></span>
-                            <span className="green"></span>
-                        </div>
-                        <span>preview</span>
+                        <PageTopbar title={"preview"} />
                         <div id="preview">
                         </div>
                     </div>
