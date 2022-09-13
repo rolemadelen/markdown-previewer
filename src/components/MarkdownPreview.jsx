@@ -5,6 +5,14 @@ import Footer from './Footer';
 import { marked } from 'marked';
 import "./MarkdownPreviewer.css";
 import PageTopbar from './PageTopbar';
+import Prism from "prismjs";
+
+marked.setOptions({
+    breaks: true,
+    highlight: function () {
+        return Prism.highlightAll()
+    }
+});
 
 export default class MarkdownPreview extends React.Component {
     constructor(props) {
