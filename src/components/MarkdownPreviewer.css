@@ -61,7 +61,7 @@
     position: absolute;
     cursor: pointer;
     top: 30%;
-    left: 2%;
+    left: 10px;
 
     width: 11px;
     height: 11px;
@@ -79,7 +79,7 @@ span.red:hover::before {
 
 span.yellow::before {
     background-color: #ffbd44;
-    left: 6%;
+    left: 30px;
 }
 
 span.yellow:hover::before {
@@ -88,7 +88,7 @@ span.yellow:hover::before {
 
 span.green::before {
     background-color: #00ca4e;
-    left: 10%;
+    left: 50px;
 }
 
 span.green:hover::before {
