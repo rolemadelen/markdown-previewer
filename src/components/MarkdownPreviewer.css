@@ -17,13 +17,18 @@
 #preview-wrapper {
     flex: 1;
     margin: 10px;
-    height: 80vh;
+    height: 70vh;
     position: relative;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px 1px #ccc;
     transition: box-shadow 0.2s ease-in-out;
+}
+
+#preview-wrapper > * {
+    padding: 0 25px;
 }
 
 #editor-wrapper:hover,
