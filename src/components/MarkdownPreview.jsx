@@ -1,12 +1,9 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import Editor from './Editor';
+import Preview from './Preview';
 import './MarkdownPreviewer.css';
-import PageTopbar from './PageTopbar';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 
 export default class MarkdownPreview extends React.Component {
   constructor(props) {
@@ -15,12 +12,12 @@ export default class MarkdownPreview extends React.Component {
     this.state = {
       markdown: '',
     };
+
     this.handleContent = this.handleContent.bind(this);
   }
 
   componentDidMount() {
-    let content = `
-# Hello
+    let content = `# Hello
 
 [rolemadelen blog](https://rolemadelen.com)
 
@@ -48,8 +45,10 @@ A paragraph with *emphasis* and **strong importance**.
 
 A table:
 
-| a | b |
-| - | - |
+| col A | col B |
+|:-----:|:-----:|
+| Item 1| Item 2|
+| Item 3| Item 4|
 `;
 
     document.querySelector('#editor').innerHTML = content;
@@ -69,47 +68,8 @@ A table:
       <React.StrictMode>
         <div id="wrapper">
           <Header />
-          <div id="editor-wrapper">
-            <PageTopbar title={'editor'} />
-            <textarea
-              name="editor"
-              id="editor"
-              onChange={this.handleContent}
-            />
-          </div>
-          <div id="preview-wrapper">
-            <PageTopbar title={'preview'} />
-            <ReactMarkdown
-              children={this.state.markdown}
-              remarkPlugins={[remarkGfm]}
-              components={{
-                code({
-                  node,
-                  inline,
-                  className,
-                  children,
-                  ...props
-                }) {
-                  const match = /language-(\w+)/.exec(
-                    className || ''
-                  );
-                  return !inline && match ? (
-                    <SyntaxHighlighter
-                      children={String(children).replace(/\n$/, '')}
-                      style={dracula}
-                      language={match[1]}
-                      PreTag="div"
-                      {...props}
-                    />
-                  ) : (
-                    <code className={className} {...props}>
-                      {children}
-                    </code>
-                  );
-                },
-              }}
-            />
-          </div>
+          <Editor handleOnChange={this.handleContent} />
+          <Preview markdown={this.state.markdown} />
           <Footer />
         </div>
       </React.StrictMode>
