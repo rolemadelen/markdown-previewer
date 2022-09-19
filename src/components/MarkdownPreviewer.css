@@ -27,10 +27,6 @@
     transition: box-shadow 0.2s ease-in-out;
 }
 
-#preview-wrapper > * {
-    padding: 0 25px;
-}
-
 #editor-wrapper:hover,
 #preview-wrapper:hover {
     box-shadow: 0 0 10px 1px #767676;
@@ -113,4 +109,14 @@ span.green:hover::before {
     color: #b4b4b4;
     text-shadow: 1px 0 #bababa;
     letter-spacing: 0.5px;
+}
+
+table, thead, tbody, tr, th, td {
+    border: 1px solid #777;
+    padding: 0 !important;
+    margin: 0 25px;
+}
+
+#preview-wrapper>* {
+    padding: 0 25px;
 }
