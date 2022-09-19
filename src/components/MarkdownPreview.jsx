@@ -3,7 +3,6 @@ import Header from './Header';
 import Footer from './Footer';
 import './MarkdownPreviewer.css';
 import PageTopbar from './PageTopbar';
-// import Prism from 'prismjs';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import ReactMarkdown from 'react-markdown';
@@ -109,7 +108,7 @@ A table:
                   );
                 },
               }}
-            ></ReactMarkdown>
+            />
           </div>
           <Footer />
         </div>
